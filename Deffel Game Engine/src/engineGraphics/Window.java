@@ -8,10 +8,12 @@ import org.lwjgl.opengl.DisplayMode;
 
 public class Window {
 
+	//Defining variables
 	private String title = "Deffel Engine";
 	private int width, height;
 	private boolean resizable = false;
 	
+	//Constructors
 	public Window(int width, int height, String title) {
 		this.width = width;
 		this.height = height;
@@ -23,6 +25,7 @@ public class Window {
 		this.height = height;
 	}
 	
+	//Creation method
 	public void create() {
 		Display.setTitle(title);
 		try {
@@ -40,19 +43,23 @@ public class Window {
 		
 	}
 	
+	//Update method
 	public void update(int fps) {		
 		Display.update();
 		Display.sync(fps);
 	}
 	
+	//Destroy Method
 	public void destroy() {
 		Display.destroy();
 	}
 	
+	//Clears color Method
 	public void clearColor() {
 		glClear(GL_COLOR_BUFFER_BIT);
 	}
 	
+	//Getters and Setters
 	public String getTitle() {
 		return title;
 	}

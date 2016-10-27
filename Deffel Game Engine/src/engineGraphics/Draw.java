@@ -4,6 +4,7 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Draw {
 
+	//Draw Rect
 	public static void drawRect(int x, int y, int width, int height) {
 		glBegin(GL_QUADS);
 		glVertex2f(x, y);
@@ -34,5 +35,9 @@ public class Draw {
 		glVertex2f(x+width, y);
 		glEnd();
 		glLoadIdentity();
+	}
+	
+	public static void drawRect(Rect rect) {
+		rect.draw();
 	}
 }

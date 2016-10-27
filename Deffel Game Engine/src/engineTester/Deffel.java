@@ -1,8 +1,8 @@
 package engineTester;
 
-import static engineGraphics.Draw.*;
-
+import static engineGraphics.Draw.drawRect;
 import engineGraphics.Colors;
+import engineGraphics.Rect;
 import engineGraphics.Window;
 import engineInput.Key;
 
@@ -19,6 +19,11 @@ public class Deffel {
 		//Creating Window
 		Window w = new Window(width = 1080, height = 960);
 		w.create();
+
+		//Defining a Rectangle(Rect for short)
+		Rect rect = new Rect(100, 100, 100, 100, Colors.blue);
+		
+		Rect rect2 = new Rect(200, 200, 100, 100, Colors.red);
 		
 		//Main Game Loop
 		while(w.isOpen()) {
@@ -34,6 +39,12 @@ public class Deffel {
 			
 			//Draws Rectangle			
 			drawRect(rect_x, rect_y, 50, 50, Colors.blue /*Setting a color, multiple ways to set colors*/);
+			
+			//Draw Rectangle multiple ways!
+			drawRect(rect);
+			
+			//Draw Rectangle using the Rect
+			rect2.draw();
 			
 			//Update Window
 			w.update(60);
